@@ -1,0 +1,21 @@
+         "Succeeded",
+                            "Failed"
+                        ]
+                    }
+                },
+        ME      error: {
+                    serializedName: "error",
+                    type: {
+                        name: "Composite",
+                        className: "Errors"
+                    }
+                }
+            }
+        }
+    };
+    var ProxyResource = {
+        serializedName: "ProxyResource",
+        type: {
+            name: "Composite",
+            className: "ProxyResource",
+            model

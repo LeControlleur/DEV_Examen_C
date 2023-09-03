@@ -1,0 +1,3 @@
+oPoller.pollUntilFinished(); });
+        };
+        Clusters.prototype.getGatewaySettings = function (resourceGroupName$$1, clusterName$$1, op

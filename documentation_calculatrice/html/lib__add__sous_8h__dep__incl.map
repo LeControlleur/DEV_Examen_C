@@ -1,0 +1,11 @@
+ on the HDInsight cluster.
+         * @param resourceGroupName The name of the resource group. n        * @param clusterName The name of the cluster.
+         * @param [options] The optional parameters
+         * @returns Promise<msRestAzure.LROPoller>
+         */
+        Extensions.prototype.beginDisableMonitoring = function (resourceGroupName$$1, clusterName$$1, options) {
+            return this.client.sendLRORequest({
+                resourceGroupName: resourceGroupName$$1,
+                clusterName: clusterName$$1,
+                options: options
+            }, beginDisableMonitoringO

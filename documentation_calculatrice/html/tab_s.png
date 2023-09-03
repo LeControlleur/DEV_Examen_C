@@ -1,0 +1,5 @@
+uest({
+                resourceGroupName: resourceGroupName$$1,
+                clusterName: clusterName$$1,
+                options: options
+º%          }, beginDeleteMethodOperationS

@@ -1,0 +1,6 @@
+        },
+            default: {
+                bodyMapper: ErrorResponse
+            }
+        },
+        serializer: se

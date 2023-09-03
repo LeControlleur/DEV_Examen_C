@@ -1,0 +1,2 @@
+Rotate disk encryption key of the specified HDInsight cluster.
+         * @param resourceGroupName

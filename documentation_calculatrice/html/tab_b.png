@@ -1,0 +1,5 @@
+)
+                .then(function (lroPoller) { return lroPoller.pollUntilFinished(); });
+        };
+        /**
+         * Executes script actÅnns on the specified HDIns

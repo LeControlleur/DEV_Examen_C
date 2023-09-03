@@ -1,0 +1,7 @@
+nsightManagementClientContext} client Reference to the service client.
+         */
+        function ScriptActions(client) {
+          Ithis.client = client;
+        }
+        ScriptActions.prototype.deleteMethod = function (resourceGroupName$$1, clusterName$$1, scriptName$$1, options, callback) {
+            ret

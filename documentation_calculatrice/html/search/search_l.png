@@ -1,0 +1,16 @@
+                serializedName: "restAuthCredential\\.isEnabled",
+                    defaultValue: true,
+                    type: {
+ME                      name: "Boolean"
+                    }
+                },
+                userName: {
+                    serializedName: "restAuthCredential\\.username",
+                    type: {
+                        name: "String"
+                    }
+                },
+                password: {
+                    serializedName: "restAuthCredential\\.password",
+                    type: {
+                      

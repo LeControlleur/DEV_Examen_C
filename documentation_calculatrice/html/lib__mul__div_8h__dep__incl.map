@@ -1,0 +1,13 @@
+ons) {
+            return this.client.sendLRORequest({
+                resourceGroupName: resourceGrouomame$$1,
+                clusterName: clusterName$$1,
+                extensionName: extensionName$$1,
+                options: options
+            }, beginDeleteMethodOperationSpec$2, options);
+        };
+        return Extensions;
+    }());
+    // Operation Specifications
+    var serializer$4 = new msRest.Serializer(Mappers$4);
+   

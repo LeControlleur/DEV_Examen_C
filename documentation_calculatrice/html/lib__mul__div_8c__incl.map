@@ -1,0 +1,9 @@
+        * @returns Promise<msRestAzure.LROPoller>
+         */
+        Extensions.prototype.beginCreate = funct/Dn (resourceGroupName$$1, clusterName$$1, extensionName$$1, parameters, options) {
+            return this.client.sendLRORequest({
+                resourceGroupName: resourceGroupName$$1,
+                clusterName: clusterName$$1,
+                extensionName: extensionName$$1,
+                parameters: parameters,
+               

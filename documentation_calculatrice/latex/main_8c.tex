@@ -1,0 +1,69 @@
+{
+    if ( createNewLexicalScope === void 0 ) createNewLexicalScope = true;
+    if ( node === void 0 ) node = this.startNode();
+
+    node.body = [];
+    this.expect(types.braceL);
+    if (createNewLexicalScope) { this.enterScope(0); }
+    while (!this.eat(types.braceR)) {
+      var stmt = this.parseStatement(null);
+      node.body.push(stmt);
+    }
+    if (createNewLexicalScope) { this.exitScope(); }
+    return this.finishNode(node, "BlockStatement")
+  };
+
+  // Parse a regular `for` loop. The disambiguation code in
+  // `parseStatement` will already have parsed the init statement or
+  // expression.
+
+  pp$1.parseFor = function(node, init) {
+    node.init = init;
+    this.expect(types.semi);
+    node.test = this.type === types.semi ? null : this.parseExpression();
+    this.expect(types.semi);
+    node.update = this.type === types.parenR ? null : this.parseExpression();
+    this.expect(types.parenR);
+    node.body = this.parseStatement("for");
+    this.exitScope();
+    this.labels.pop();
+    return this.finishNode(node, "ForStatement")
+  };
+
+  // Parse a `for`/`in` and `for`/`of` loop, which are almost
+  // same from parser's perspective.
+
+  pp$1.parseForIn = function(node, init) {
+    var isForIn = this.type === types._in;
+    this.next();
+
+    if (
+      init.type === "VariableDeclaration" &&
+      init.declarations[0].init != null &&
+      (
+        !isForIn ||
+        this.options.ecmaVersion < 8 ||
+        this.strict ||
+        init.kind !== "var" ||
+        init.declarations[0].id.type !== "Identifier"
+      )
+    ) {
+      this.raise(
+        init.start,
+        ((isForIn ? "for-in" : "for-of") + " loop variable declaration may not have an initializer")
+      );
+    } else if (init.type === "AssignmentPattern") {
+      this.raise(init.start, "Invalid left-hand side in for-loop");
+    }
+    node.left = init;
+    node.right = isForIn ? this.parseExpression() : this.parseMaybeAssign();
+    this.expect(types.parenR);
+    node.body = this.parseStatement("for");
+    this.exitScope();
+    this.labels.pop();
+    return this.finishNode(node, isForIn ? "ForInStatement" : "ForOfStatement")
+  };
+
+  // Parse a list of variable declarations.
+
+  pp$1.parse

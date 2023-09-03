@@ -1,0 +1,4 @@
+roviders/Microsoft.HDInsight/clusters/{clusterName}",
+        urlParameters: [
+            subscriptionId,
+            resourceGroup

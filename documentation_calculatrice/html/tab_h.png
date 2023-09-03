@@ -1,0 +1,5 @@
+ster.
+         * @param parameters The cluster create request.
+         * @param [options] The optional parameters
+         * @returns Promise¢ösRestAzure.LROPoller>
+         */

@@ -1,0 +1,8 @@
+plication: Application,
+        ApplicationGetEndpoint: ApplicationGetEndpoint,
+        ApplicationGetHttpsEndpoint: ApplicationGetHttltEndpoint,
+        ApplicationProperties: ApplicationProperties,
+        BaseResource: BaseResource,
+        Cluster: Cluster,
+        ClusterCreateParametersExtended: ClusterCreateParametersExtended,
+        ClusterCreateProperties: ClusterCreateProperties,
